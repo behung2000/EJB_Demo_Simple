@@ -4,3 +4,4 @@
 #### Chức năng gồm có:
   * Có giao diện đơn sơ
   * Thêm sửa xóa nhân viên (sửa không cho sửa căc cước công dân nếu sửa or thêm sai sẽ chuyển trang khác)
+#### Video demo: https://youtu.be/AN5DwWzbomg 
