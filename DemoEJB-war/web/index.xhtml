@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>LIST NHAN VIEN</title>
+    </h:head>
+    <h:body> 
+        <h1>List nhân viên</h1>
+        <table border="5" cellpadding="10">
+            <tr>
+                <th>No.</th>
+                <th>CCCD</th>
+                <th>Name</th>
+                <th>SDT</th>
+                <th colspan="2"><a href="insert.xhtml">Insert</a></th>
+            </tr>
+            <c:forEach var="it" items="${nhanvienServlet.nhanvienList}" varStatus="number">
+                <form ame="action" action="NhanvienServlet" method="POST">
+                    <tr>
+                        <td>${number.count}</td>
+                        <td><input type="text" name="cccd" value="${it.cccd}" readonly="true"/></td>
+                        <td><input type="text" name="ten" value="${it.ten}"/></td>
+                        <td><input type="text" name="sdt" value="${it.sdt}"/></td>
+                        <td><input type="submit" value="Delete" name="action"/></td>
+                        <td><input type="submit" value="Update" name="action"/></td>
+                    </tr>
+                </form>
+            </c:forEach>
+        </table>
+
+    </h:body>
+</html>
+
